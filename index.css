@@ -1,0 +1,114 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: calibri;
+  font-size: 16pt;
+  margin: 0;
+  background: #14bdac;
+}
+
+table {
+  border-collapse: collapse;
+  border: none; /* Remove the outer border of the table */
+}
+
+td {
+  height: 100px; /* Adjust for uniform cell size */
+  width: 100px; /* Adjust for uniform cell size */
+  border: 5px solid black; /* Add borders between cells */
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/* Remove the outer borders */
+table tr:first-child td {
+  border-top: none;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table tr td:first-child {
+  border-left: none;
+}
+
+table tr td:last-child {
+  border-right: none;
+}
+
+#game-header {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+#replay-button {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+svg {
+  position: absolute;
+  z-index: -1;
+}
+
+line {
+  stroke: red; /* Winning line color */
+  stroke-width: 4; /* Line thickness */
+  stroke-linecap: round;
+}
+
+.drawLine {
+  animation: drawing 1s ease-in-out forwards;
+}
+
+@keyframes drawing {
+  from {
+    stroke-dasharray: 0, 300;
+  }
+  to {
+    stroke-dasharray: 300, 300;
+  }
+}
+
+.horizTop {
+  transform: translateY(50px); /* Align with top row */
+}
+
+.horizMid {
+  transform: translateY(150px); /* Align with middle row */
+}
+
+.horizBtm {
+  transform: translateY(250px); /* Align with bottom row */
+}
+
+.vertL {
+  transform: translateX(50px) rotate(90deg); /* Align with left column */
+}
+
+.vertM {
+  transform: translateX(150px) rotate(90deg); /* Align with middle column */
+}
+
+.vertR {
+  transform: translateX(250px) rotate(90deg); /* Align with right column */
+}
+
+.diagL {
+  transform: translate(150px, 150px) rotate(45deg); /* Align with top-left to bottom-right diagonal */
+}
+
+.diagR {
+  transform: translate(150px, 150px) rotate(-45deg); /* Align with top-right to bottom-left diagonal */
+}
